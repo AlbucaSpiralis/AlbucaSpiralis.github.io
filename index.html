@@ -74,7 +74,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">4月 2015</a><span class="archive-list-count">5</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">4月 2015</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -84,6 +84,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/04/29/20150429/">20150429</a>
+          </li>
         
           <li>
             <a href="/2015/04/27/20150427/">Figgy - Too Future. Guest Mix 023: Figgy</a>
@@ -101,10 +105,6 @@
             <a href="/2015/04/16/20150416/">Hexoにsoundcloudプラグイン導入</a>
           </li>
         
-          <li>
-            <a href="/2015/04/15/hello-myblog/">hello myblog</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -114,7 +114,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Alex/">Alex</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pygal/">pygal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/soundcloud/">soundcloud</a><span class="tag-list-count">3</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Alex/">Alex</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quandl/">Quandl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pygal/">pygal</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/soundcloud/">soundcloud</a><span class="tag-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -123,7 +123,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Alex/" style="font-size: 10px;">Alex</a><a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a><a href="/tags/pygal/" style="font-size: 10px;">pygal</a><a href="/tags/python/" style="font-size: 10px;">python</a><a href="/tags/soundcloud/" style="font-size: 20px;">soundcloud</a>
+      <a href="/tags/Alex/" style="font-size: 10px;">Alex</a><a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a><a href="/tags/Quandl/" style="font-size: 10px;">Quandl</a><a href="/tags/pygal/" style="font-size: 15px;">pygal</a><a href="/tags/python/" style="font-size: 15px;">python</a><a href="/tags/soundcloud/" style="font-size: 20px;">soundcloud</a>
     </div>
   </div>
 
@@ -146,6 +146,53 @@
 </aside>
         
         <section id="main">
+  
+    <article id="post-20150429" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/29/20150429/" class="article-date">
+  <time datetime="2015-04-29T11:45:37.000Z" itemprop="datePublished">2015-04-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/29/20150429/">20150429</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Quandlからデータを頂戴する">Quandlからデータを頂戴する</h1><p><a href="https://www.quandl.com/" target="_blank" rel="external">Quandl</a>からデータを取ってきて、pygalで表示する。<br>Quandlでは、様々なデータに固有のコードが割り振られており、<br>データが欲しい時には、このコードを指定して、get関数を使えば終いなのである。<br><figure class="highlight"><figcaption><span>日本の全人口推移を取得</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Quandl as q&#10;d = q.get(&#39;WORLDBANK/JPN_SP_POP_TOTL&#39;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Quandlにアカウント登録する。">Quandlにアカウント登録する。</h2><p>アカウントなしでもデータは手に入るが、１日当りにAPIを叩ける回数は50回に制限されている。<br>アカウント登録により取得されるauthtokenを使えば、この制限は無くなるので、是非とも登録しておきたい。</p>
+<h2 id="Quandlをインストールする">Quandlをインストールする</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Quandl</span><br></pre></td></tr></table></figure>
+<p><em>※pandasが事前にインストールされてること</em></p>
+<h2 id="APIを叩いてデータを取得する">APIを叩いてデータを取得する</h2><p><a href="http://ja.wikipedia.org/wiki/%E3%82%A8%E3%82%B9%E3%83%88%E3%83%8B%E3%82%A2" target="_blank" rel="external">エストニア</a>の年齢別人口比率を取得する。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> Quandl <span class="keyword">as</span> q</span><br><span class="line">my_token = <span class="string">'アカウント登録した歳のauthtokenをここに入力'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 15歳未満</span></span><br><span class="line">d_junior = q.get(<span class="string">'WORLDBANK/EST_SP_POP_0014_TO_ZS'</span>, authtoken = my_token)</span><br><span class="line"><span class="comment"># 15歳以上 - 65歳未満</span></span><br><span class="line">d_mid = q.get(<span class="string">'WORLDBANK/EST_SP_POP_1564_TO_ZS'</span>, authtoken = my_token)</span><br><span class="line"><span class="comment"># 65歳以上</span></span><br><span class="line">d_senior = q.get(<span class="string">'WORLDBANK/EST_SP_POP_65UP_TO_ZS'</span>, authtoken = my_token)</span><br></pre></td></tr></table></figure></p>
+<h2 id="pygalで描画する">pygalで描画する</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pygal</span><br><span class="line"><span class="keyword">from</span> pygal.style <span class="keyword">import</span> Style</span><br><span class="line">custom_style = Style(</span><br><span class="line">  background=<span class="string">'#F0E1CC '</span>,</span><br><span class="line">  plot_background=<span class="string">'transparent'</span>,</span><br><span class="line">  foreground=<span class="string">'#273417'</span>,</span><br><span class="line">  foreground_light=<span class="string">'#000000'</span>,</span><br><span class="line">  foreground_dark=<span class="string">'#oooooo'</span>,</span><br><span class="line">  opacity=<span class="string">'.7'</span>,</span><br><span class="line">  opacity_hover=<span class="string">'.9'</span>,</span><br><span class="line">  transition=<span class="string">'200ms ease-in'</span>,</span><br><span class="line">  colors=(<span class="string">'#ffffff'</span>, <span class="string">'#000000'</span>, <span class="string">'#4B92D7'</span>))</span><br><span class="line"></span><br><span class="line">population_distribution = pygal.StackedLine(fill=<span class="keyword">True</span>, style=custom_style, show_dots=<span class="keyword">False</span>, show_legend=<span class="keyword">False</span>)</span><br><span class="line">population_distribution.title = <span class="string">'Estonia'</span></span><br><span class="line">population_distribution.add(<span class="string">'under 15'</span>, d_junior[<span class="string">'Value'</span>])</span><br><span class="line">population_distribution.add(<span class="string">'between 15 and 64'</span>, d_mid[<span class="string">'Value'</span>])</span><br><span class="line">population_distribution.add(<span class="string">'over 64'</span>, d_senior[<span class="string">'Value'</span>])</span><br><span class="line"></span><br><span class="line">pygal_render=population_distribution.render_to_file(<span class="string">'estonia.svg'</span>)</span><br></pre></td></tr></table></figure>
+<p>エストニアにおける1960年〜2013年の人口比を表示した。<br><img src="/2015/04/29/20150429/estonia.svg" alt="estonia.svg"><br>上から順に、65歳以上、15歳以上65歳未満、15歳未満の人口比を表している。</p>
+<p>ラトビア、リトアニア版を作成してみる。<br><img src="/2015/04/29/20150429/latvia.svg" alt="latvia.svg"><br><img src="/2015/04/29/20150429/lithuania.svg" alt="lithuania.svg"></p>
+<p>色々とマナーのなっていないグラフだけれど、バルト３国の国旗が完成した。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/29/20150429/" data-id="ci92oo0o50008pg5m1qvq23vd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quandl/">Quandl</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pygal/">pygal</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-20150427" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -174,7 +221,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/27/20150427/" data-id="ci8yssrln0008qu5m7glb43do" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/27/20150427/" data-id="ci92oo0o8000fpg5maa2wjv88" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/soundcloud/">soundcloud</a></li></ul>
@@ -220,7 +267,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/25/20150425/" data-id="ci8yssrlp000aqu5ms5y7kmkz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/25/20150425/" data-id="ci92oo0o9000hpg5m0h8r880m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pygal/">pygal</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -259,7 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/17/20150417/" data-id="ci8yssrly000fqu5mn0u53jdl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/17/20150417/" data-id="ci92oo0on000kpg5mfxhilwjf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/soundcloud/">soundcloud</a></li></ul>
@@ -299,7 +346,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/16/20150416/" data-id="ci8yssrl90000qu5me55z8c61" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/16/20150416/" data-id="ci92oo0nr0000pg5m3ws1q4t0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/soundcloud/">soundcloud</a></li></ul>
@@ -338,7 +385,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/15/hello-myblog/" data-id="ci8yssrll0003qu5mfe2c6nc7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/15/hello-myblog/" data-id="ci92oo0o20003pg5mu82hnzbw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Alex/">Alex</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
